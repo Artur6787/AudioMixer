@@ -255,7 +255,7 @@ AudioSource:
   m_GameObject: {fileID: 47139787}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1090241486146676637, guid: 48ab3b87fab50434e8e61f9dea2e8755, type: 2}
+  OutputAudioMixerGroup: {fileID: 9086342156838607317, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
   m_audioClip: {fileID: 8300000, guid: ef2f3179dc58a1143885c8a23f4d2625, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -578,8 +578,9 @@ GameObject:
   - component: {fileID: 302473292}
   - component: {fileID: 302473291}
   - component: {fileID: 302473290}
+  - component: {fileID: 302473293}
   m_Layer: 5
-  m_Name: Sound 3
+  m_Name: ButtonSound 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,6 +688,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302473288}
   m_CullTransparentMesh: 1
+--- !u!114 &302473293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302473288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f2100e3feb4604999059dff722fd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 302473290}
+  sfxSource: {fileID: 2039260940}
 --- !u!1 &320838326
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +747,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 394119242}
-  - component: {fileID: 394119241}
+  - component: {fileID: 394119244}
+  - component: {fileID: 394119243}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -740,32 +756,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &394119241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394119240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb16a21d95b2d9847b4fe57efd2c2281, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 48ab3b87fab50434e8e61f9dea2e8755, type: 2}
-  backgroundMusicSource: {fileID: 47139788}
-  sfxSources:
-  - {fileID: 2087000016}
-  - {fileID: 504456924}
-  - {fileID: 2039260940}
-  playSfxButtons:
-  - {fileID: 513496802}
-  - {fileID: 1412273876}
-  - {fileID: 302473290}
-  muteToggleButton: {fileID: 851022326}
-  masterSlider: {fileID: 912396259}
-  sfxSlider: {fileID: 1261029042}
-  musicSlider: {fileID: 1429865192}
 --- !u!4 &394119242
 Transform:
   m_ObjectHideFlags: 0
@@ -782,6 +772,42 @@ Transform:
   - {fileID: 47139789}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394119243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394119240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923ba90f1cd9a97468189665b78bb6ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
+  _muteToggleButton: {fileID: 851022326}
+  _backgroundMusicSource: {fileID: 47139788}
+  _masterSlider: {fileID: 1429865192}
+  _masterGroup: {fileID: 24300002, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
+--- !u!114 &394119244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394119240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c67f838e8487a44a1dd84e50dd5fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
+  _masterSlider: {fileID: 912396259}
+  _sfxSlider: {fileID: 1261029042}
+  _musicSlider: {fileID: 1429865192}
+  _masterGroup: {fileID: 24300002, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
+  _sfxGroup: {fileID: 4479464308143334247, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
+  _musicGroup: {fileID: 9086342156838607317, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
 --- !u!1 &504456922
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +849,7 @@ AudioSource:
   m_GameObject: {fileID: 504456922}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3551434062360291143, guid: 48ab3b87fab50434e8e61f9dea2e8755, type: 2}
+  OutputAudioMixerGroup: {fileID: 4479464308143334247, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
   m_audioClip: {fileID: 8300000, guid: 97f1cc4ef7d55cc4490815c5fa74b7e7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -922,8 +948,9 @@ GameObject:
   - component: {fileID: 513496804}
   - component: {fileID: 513496803}
   - component: {fileID: 513496802}
+  - component: {fileID: 513496805}
   m_Layer: 5
-  m_Name: Sound 1
+  m_Name: ButtonSound 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,6 +1058,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513496800}
   m_CullTransparentMesh: 1
+--- !u!114 &513496805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513496800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f2100e3feb4604999059dff722fd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 513496802}
+  sfxSource: {fileID: 2087000016}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,6 +1592,7 @@ GameObject:
   - component: {fileID: 851022328}
   - component: {fileID: 851022327}
   - component: {fileID: 851022326}
+  - component: {fileID: 851022329}
   m_Layer: 5
   m_Name: Toggle Sound
   m_TagString: Untagged
@@ -1660,6 +1702,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851022324}
   m_CullTransparentMesh: 1
+--- !u!114 &851022329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851022324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f2100e3feb4604999059dff722fd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 851022326}
+  sfxSource: {fileID: 0}
 --- !u!1 &852764502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,8 +2540,9 @@ GameObject:
   - component: {fileID: 1412273878}
   - component: {fileID: 1412273877}
   - component: {fileID: 1412273876}
+  - component: {fileID: 1412273879}
   m_Layer: 5
-  m_Name: Sound 2
+  m_Name: ButtonSound 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2593,6 +2650,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412273874}
   m_CullTransparentMesh: 1
+--- !u!114 &1412273879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412273874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f2100e3feb4604999059dff722fd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1412273876}
+  sfxSource: {fileID: 504456924}
 --- !u!1 &1429865190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,7 +3501,7 @@ AudioSource:
   m_GameObject: {fileID: 2039260938}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3551434062360291143, guid: 48ab3b87fab50434e8e61f9dea2e8755, type: 2}
+  OutputAudioMixerGroup: {fileID: 4479464308143334247, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
   m_audioClip: {fileID: 8300000, guid: ea866f88eed5d3d49862456fe6b30797, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3558,7 +3629,7 @@ AudioSource:
   m_GameObject: {fileID: 2087000014}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3551434062360291143, guid: 48ab3b87fab50434e8e61f9dea2e8755, type: 2}
+  OutputAudioMixerGroup: {fileID: 4479464308143334247, guid: ac13a07c2724d544ab25d72b3ba6ae75, type: 2}
   m_audioClip: {fileID: 8300000, guid: 44fd20f23bd9c7b40a5f3030333bb4c9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
