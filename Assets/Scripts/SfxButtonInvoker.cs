@@ -3,30 +3,22 @@ using UnityEngine.UI;
 
 public class SfxButtonInvoker : MonoBehaviour
 {
-    [SerializeField] private Button button;
-    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private Button _button;
+    [SerializeField] private AudioSource _sfxSource;
 
     private void Start()
     {
-        if (button != null)
-        {
-            button.onClick.AddListener(OnButtonClicked);
-        }
+         _button.onClick.AddListener(OnButtonClicked);
     }
 
     private void OnDestroy()
     {
-        if (button != null)
-        {
-            button.onClick.RemoveListener(OnButtonClicked);
-        }
+         _button.onClick.RemoveListener(OnButtonClicked);
+
     }
 
     private void OnButtonClicked()
     {
-        if (sfxSource != null)
-        {
-            sfxSource.Play();
-        }
+         _sfxSource.Play();
     }
 }
